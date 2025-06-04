@@ -49,14 +49,16 @@ ACCIDENTALLY EXCLUDED, HOPE TO FIX:
 OTHER QUIRKS:
 You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
 
-TO DO LIST:
+TO DO LIST AND IDEAS:
 1. Need more visualizations.
 2. Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
-
-IDEAS
-1. After model results are compiled, print the results with each year excluded.
-2. Interpolate data between the election years and simulate them as if an election took place.
-3. SMOTER
+3. IDEA - After model results are compiled, print the results with each year excluded
+4. IDEA - Interpolate data between the election years and simulate them as if an election took place.
+5. IDEA - SMOTER (regression equivalent of SMOTE, in which synthetic data points are generated to strengthen the relationship between features)
+6. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
+7. Color code columns for parties. Tried a primitive version of this, didn't work. Background color, or just text?
+8. Rename percentage columns to include the % symbol
+9. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
 
 
 
