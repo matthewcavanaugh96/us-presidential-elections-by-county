@@ -56,7 +56,7 @@ Colorado - Broomfield County did not exist until 2001. The city of Broomfield wa
 
 Hawaii - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine settlement. To this day it is inhabited only by the descendants of the initial patients, land access is only by mule trail, public visitation requires official permission, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
 
-Connecticut - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile old county names with new boundaries. This will become a larger problem when/if 2024 data is added.
+Connecticut - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile old county names with new boundaries. This will become a larger problem when/if 2024 data is added.
 
 South Dakota - The former Shannon County changed its name to Oglala Lakota County in 2015. Entries with the old name have been updated to use the new one.
 
