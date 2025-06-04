@@ -1,0 +1,1256 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Cleaned County Dataset' inline='true' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Cleaned County Dataset' name='textscan.0bx9a9o0jvgc5212aa9n51qj4ckn'>
+            <connection class='textscan' directory='/Users/matthewcavanaugh/Desktop/GitHub/us-presidential-elections-by-county' filename='Cleaned County Dataset.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0bx9a9o0jvgc5212aa9n51qj4ckn' name='Cleaned County Dataset.csv' table='[Cleaned County Dataset#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' date-parse-format='yyyy' name='Year' ordinal='0' />
+            <column datatype='string' name='State' ordinal='1' />
+            <column datatype='string' name='County' ordinal='2' />
+            <column datatype='integer' name='FIPS Code' ordinal='3' />
+            <column datatype='integer' name='Population' ordinal='4' />
+            <column datatype='integer' name='Democrat Votes' ordinal='5' />
+            <column datatype='real' name='Democrat Percentage' ordinal='6' />
+            <column datatype='integer' name='Republican Votes' ordinal='7' />
+            <column datatype='real' name='Republican Percentage' ordinal='8' />
+            <column datatype='integer' name='Other Votes' ordinal='9' />
+            <column datatype='real' name='Other Percentage' ordinal='10' />
+            <column datatype='integer' name='Total Votes' ordinal='11' />
+            <column datatype='real' name='Turnout' ordinal='12' />
+            <column datatype='real' name='D-R margin' ordinal='13' />
+            <column datatype='real' name='Two party vote share' ordinal='14' />
+            <column datatype='real' name='Bachelor&apos;s degree or higher' ordinal='15' />
+            <column datatype='real' name='At least some college' ordinal='16' />
+            <column datatype='real' name='High school graduate' ordinal='17' />
+            <column datatype='real' name='Less than high school' ordinal='18' />
+            <column datatype='real' name='Unemployment rate' ordinal='19' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>County</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[County]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>County</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FIPS Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FIPS Code]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>FIPS Code</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Democrat Votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Democrat Votes]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Democrat Votes</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Democrat Percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Democrat Percentage]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Democrat Percentage</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Republican Votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Republican Votes]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Republican Votes</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Republican Percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Republican Percentage]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Republican Percentage</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Other Votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Other Votes]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Other Votes</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Other Percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Other Percentage]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Other Percentage</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Votes]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Total Votes</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Turnout</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Turnout]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Turnout</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>D-R margin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[D-R margin]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>D-R margin</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Two party vote share</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Two party vote share]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Two party vote share</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bachelor&apos;s degree or higher</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Bachelor&apos;s degree or higher]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Bachelor&apos;s degree or higher</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>At least some college</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[At least some college]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>At least some college</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>High school graduate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[High school graduate]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>High school graduate</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Less than high school</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Less than high school]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Less than high school</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unemployment rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Unemployment rate]</local-name>
+            <parent-name>[Cleaned County Dataset.csv]</parent-name>
+            <remote-alias>Unemployment rate</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='High school graduate (Yearly Mean)' datatype='real' name='[Calculation_1758444565296209922]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_AVG(SUM([High school graduate]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='High school graduate (± Yearly Mean)' datatype='real' name='[Calculation_1758444565296349187]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([High school graduate]) - WINDOW_AVG(SUM([High school graduate]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='integer' name='[FIPS Code]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+      <column caption='Cleaned County Dataset.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='State, County'>
+          <field>[State]</field>
+          <field>[County]</field>
+        </drill-path>
+      </drill-paths>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/var/folders/cf/4zrkk0lx1nbdx9tpklpk4jc00000gn/T/tableau-temp/#TableauTemp_1ct4v6b0ta4sgn13dmk2q1skpz5d.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>51</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[County]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2383</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FIPS Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[FIPS Code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FIPS Code</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4193</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Population</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Population]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Population</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16151</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Democrat Votes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Democrat Votes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Democrat Votes</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7144</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Democrat Percentage</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Democrat Percentage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Democrat Percentage</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4719</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Republican Votes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Republican Votes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Republican Votes</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6776</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Republican Percentage</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Republican Percentage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Republican Percentage</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4655</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Other Votes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Other Votes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Other Votes</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1956</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Other Percentage</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Other Percentage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Other Percentage</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1184</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total Votes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total Votes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Total Votes</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10357</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Turnout</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Turnout]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Turnout</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3886</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>D-R margin</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[D-R margin]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>D-R margin</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6072</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Two party vote share</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Two party vote share]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Two party vote share</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1183</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Bachelor&apos;s degree or higher</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Bachelor&apos;s degree or higher]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Bachelor&apos;s degree or higher</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3202</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>At least some college</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[At least some college]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>At least some college</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4324</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High school graduate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High school graduate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>High school graduate</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3368</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Less than high school</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Less than high school]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Less than high school</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3407</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Unemployment rate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Unemployment rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Unemployment rate</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Cleaned County Dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>180</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Cleaned County Dataset.csv' id='Cleaned County Dataset.csv_CF2FBE7EC5FB4E56AC86182184C6F49E'>
+            <properties context=''>
+              <relation connection='textscan.0bx9a9o0jvgc5212aa9n51qj4ckn' name='Cleaned County Dataset.csv' table='[Cleaned County Dataset#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' date-parse-format='yyyy' name='Year' ordinal='0' />
+                  <column datatype='string' name='State' ordinal='1' />
+                  <column datatype='string' name='County' ordinal='2' />
+                  <column datatype='integer' name='FIPS Code' ordinal='3' />
+                  <column datatype='integer' name='Population' ordinal='4' />
+                  <column datatype='integer' name='Democrat Votes' ordinal='5' />
+                  <column datatype='real' name='Democrat Percentage' ordinal='6' />
+                  <column datatype='integer' name='Republican Votes' ordinal='7' />
+                  <column datatype='real' name='Republican Percentage' ordinal='8' />
+                  <column datatype='integer' name='Other Votes' ordinal='9' />
+                  <column datatype='real' name='Other Percentage' ordinal='10' />
+                  <column datatype='integer' name='Total Votes' ordinal='11' />
+                  <column datatype='real' name='Turnout' ordinal='12' />
+                  <column datatype='real' name='D-R margin' ordinal='13' />
+                  <column datatype='real' name='Two party vote share' ordinal='14' />
+                  <column datatype='real' name='Bachelor&apos;s degree or higher' ordinal='15' />
+                  <column datatype='real' name='At least some college' ordinal='16' />
+                  <column datatype='real' name='High school graduate' ordinal='17' />
+                  <column datatype='real' name='Less than high school' ordinal='18' />
+                  <column datatype='real' name='Unemployment rate' ordinal='19' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='HSE Outliers'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='real' name='[At least some college]' role='measure' type='quantitative' />
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[High school graduate]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Less than high school]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[At least some college]' derivation='Sum' name='[sum:At least some college:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[High school graduate]' derivation='Sum' name='[sum:High school graduate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Less than high school]' derivation='Sum' name='[sum:Less than high school:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2016' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-9687675.1464255564' min='-10981390.766104607' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5183969.8830645084' min='4349770.7066107122' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' max='99.549999999999997' min='48.149999999999999' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:At least some college:qk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Less than high school:qk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{78700E5D-A74B-479C-BBAA-057CEA8CF104}' />
+    </worksheet>
+    <worksheet name='HSE Overall Mean'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='real' name='[At least some college]' role='measure' type='quantitative' />
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[High school graduate]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Less than high school]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[At least some college]' derivation='Sum' name='[sum:At least some college:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[High school graduate]' derivation='Sum' name='[sum:High school graduate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Less than high school]' derivation='Sum' name='[sum:Less than high school:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7167851.3547706706' min='-13366925.667799359' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='7015720.9356455011' min='2742994.6024343884' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='83.329999999999998' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' max='99.549999999999997' min='48.149999999999999' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:At least some college:qk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Less than high school:qk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{C784E176-0979-42C6-8DED-9001E3A3473F}' />
+    </worksheet>
+    <worksheet name='HSE Yearly Mean'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column caption='High school graduate (± Yearly Mean)' datatype='real' name='[Calculation_1758444565296349187]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([High school graduate]) - WINDOW_AVG(SUM([High school graduate]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[High school graduate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[High school graduate]' derivation='Sum' name='[sum:High school graduate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1758444565296349187]' derivation='User' name='[usr:Calculation_1758444565296349187:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[County]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8483042.5253793057' min='-12706479.491103176' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5637104.0309573859' min='2830991.6688461076' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate (± mean):&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{D1D923C4-D867-4D17-A90F-A18A995126CF}' />
+    </worksheet>
+    <worksheet name='Margin'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[D-R margin]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[D-R margin]' derivation='Sum' name='[sum:D-R margin:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2004' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-9606637.8136652112' min='-11257073.372592185' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5241938.5691738613' min='4177723.2477352098' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{0F36D7F7-3AD8-4D4B-B2EB-07BCBA717635}' />
+    </worksheet>
+    <worksheet name='Test Again'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[D-R margin]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[D-R margin]' derivation='Sum' name='[sum:D-R margin:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2008' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7559542.9232332138' min='-13148257.478689903' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='6472718.9915425712' min='2869066.837482688' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{1E6855C6-34BF-4838-ABBB-54F2528C4F47}' />
+    </worksheet>
+    <worksheet name='Turnout'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='real' name='[Turnout]' role='measure' type='quantitative' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Turnout]' derivation='Sum' name='[sum:Turnout:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2000' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8812982.6779266782' min='-11383776.8157079' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5606100.3231059192' min='3948429.719189601' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='40.0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Turnout:qk]' max='232.84' min='8.0999999999999996' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Turnout:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{FC4819B2-71E3-4AF1-B5EF-EEDA2728A4D2}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Margin'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='2' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' type='color' />
+            <card type='filters' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{94581460-3A9C-4755-8302-116834BE5373}' />
+    </window>
+    <window class='worksheet' name='Turnout'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Turnout:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A2DE875A-8FDA-496E-904A-2508E50179A6}' />
+    </window>
+    <window class='worksheet' name='HSE Overall Mean'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2F43F48C-181D-4BF9-BCF1-21A8ACE72D19}' />
+    </window>
+    <window class='worksheet' name='HSE Yearly Mean'>
+      <cards>
+        <edge name='left'>
+          <strip size='187'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1223F8F1-537C-4401-8D12-FE1C5B55C0AA}' />
+    </window>
+    <window class='worksheet' name='HSE Outliers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6C893F87-CEF1-4C2B-AA66-3AFF73BBD456}' />
+    </window>
+    <window class='worksheet' name='Test Again'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1953E552-3E3D-4CF9-B540-E26A77D335C4}' />
+    </window>
+  </windows>
+</workbook>
