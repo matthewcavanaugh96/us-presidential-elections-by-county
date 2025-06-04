@@ -49,10 +49,13 @@ ACCIDENTALLY EXCLUDED, HOPE TO FIX:
 OTHER QUIRKS:
 You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
 
-IDEAS AND TO DO LIST:
-Need more visualizations.
-After model results are compiled, print the results with each year excluded.
-Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
+TO DO LIST:
+1. Need more visualizations.
+2. Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
+
+IDEAS
+1. After model results are compiled, print the results with each year excluded.
+2. Interpolate data between the election years and simulate them as if an election took place.
 
 
 
