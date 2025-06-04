@@ -1,19 +1,13 @@
 # us-presidential-elections-by-county
 Analyzing United States Presidential election results at the county level from 2000 to 2020.
 
-
 Pardon the mess. I am still optimizing my scripts, developing new ideas, and working on a data storage structure. The main notebook will be split into several smaller ones at some stage in the future.
 
+DATA SOURCES
 
-Election results were obtained from Harvard Dataverse.
-https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
-
-Education and unemployment data were obtained from the Economic Research Service, a sub-agency of the Department of Agriculture.
-https://www.ers.usda.gov/
-    (For education, estimates were only available for 2000, 2008-2012, and 2019-2023. I assigned 2008-12 values to 2010, and 2019-23 values to 2021, then interpolated estimates for years between.)
-
-Population data were obtained from the United States Census Bureau. 2000, 2010, and 2020 data were taken from official Census figures, and other years use Census Bureau estimates.
-https://www.census.gov/
+1. Election results were obtained from Harvard Dataverse: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
+2. Education and unemployment data were obtained from the Economic Research Service, a sub-agency of the Department of Agriculture: https://www.ers.usda.gov/ (For education, estimates were only available for 2000, 2008-2012, and 2019-2023. I assigned 2008-12 values to 2010, and 2019-23 values to 2021, then interpolated estimates for years between.)
+3. Population data were obtained from the United States Census Bureau. 2000, 2010, and 2020 data were taken from official Census figures, and other years use Census Bureau estimates: https://www.census.gov/
 
 I intend to add more statistics such as income, life expectancy, and demographics. 
 
@@ -21,13 +15,7 @@ Finding and cleaning data has been a project of its own.
 
 I'd also like to include other factors such as the approval rating of the incumbent President (and their party), polling averages, and social media sentiment, but I'm unsure if such data are available at the county level; if not, how I might interpolate them; and if county interpolation is not desirable, whether it makes sense to apply nationwide figures to every county.
 
-
-
-
 I've created a Tableau workbook to visualize certain statistics. It will be updated as more are added.
-
-
-
 
 I have been working with machine learning models. My basic methodology is as follows:
 1. Set two targets: Republican percentage and Democratic percentage. This helps to partially account for errors that only affect one party (as notably occurred in Utah in 2016).
@@ -37,14 +25,10 @@ I have been working with machine learning models. My basic methodology is as fol
 6. Aggregate these stats across county, state, year, and state/year combination.
 I am still experimenting with validation techniques such as GridSearchCV, K-Folds, and feature selection.
 
-
 Once I have maximally optimized a model, I will attempt to simulate the 2024 election using the full 2000-2020 dataset as training. From county results, statewide totals will be summed and electoral votes assigned accordingly.
 My primitive version of this 2024 model predicted a Democratic victory, the opposite of the real-life result.
 
 If I can add real 2024 results to my dataset, I will then move on to predicting 2028.
-
-
-
 
 STATES AND COUNTIES EXCLUDED, NO OBVIOUS FIX:
 
@@ -52,8 +36,7 @@ STATES AND COUNTIES EXCLUDED, NO OBVIOUS FIX:
 2. VIRGINIA - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. Though data exist for both prior to their status changes, I have excluded them as I believe models would be confused by missing data.
 3. COLORADO - Broomfield County did not exist until 2001. The city of Broomfield was previously spread across four counties before being granted the status of Consolidated City/County for more efficient self-governance. Thus, it is missing from most 2000 data. I am considering interpolating values based on real ones, but this would also artifically inflate Colorado's statewide vote totals for 2000 as its votes were spread across the other counties, unless *their* 2000 values could be interpolated downward to estimate figures if Broomfield had never been a part of them. For now, I have excluded it.
 4. HAWAII - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine settlement. To this day it is inhabited only by the descendants of the initial patients, land access is only by mule trail, public visitation requires official permission, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
-5. NON-COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes such as overseas and write-ins which are not assigned to any particular county. I wonder if I could assign these votes proportionally to counties by population, then assign votes to parties based on the county's figures.
-
+5. NON-COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes such as overseas and write-ins which are not assigned to any particular county. I wonder if I could assign these votes proportionally to counties by population, then assign votes proportionally within the counties by each party's percentage.
 
 NOT A PROBLEM FOR NOW, BUT COULD CAUSE COMPLICATIONS:
 1. CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
