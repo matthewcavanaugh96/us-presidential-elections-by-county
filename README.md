@@ -56,6 +56,7 @@ TO DO LIST:
 IDEAS
 1. After model results are compiled, print the results with each year excluded.
 2. Interpolate data between the election years and simulate them as if an election took place.
+3. SMOTER
 
 
 
