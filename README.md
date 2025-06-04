@@ -1,2 +1,70 @@
 # us-presidential-elections-by-county
-Analyzing United States Presidential election results at the county level from 2000 to 2020
+Analyzing United States Presidential election results at the county level from 2000 to 2020.
+
+
+Election results were obtained from Harvard Dataverse.
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
+
+Education and unemployment data were obtained from the Economic Research Service, a sub-agency of the Department of Agriculture.
+https://www.ers.usda.gov/
+    (For education, estimates were only available for 2000, 2008-2012, and 2019-2023. I assigned 2008-12 values to 2010, and 2019-23 values to 2021, then interpolated estimates for years between.)
+
+Population data were obtained from the United States Census Bureau. 2000, 2010, and 2020 data were taken from official Census figures, and other years use Census Bureau estimates.
+https://www.census.gov/
+
+I intend to add more statistics such as income, life expectancy, and demographics. 
+
+Finding and cleaning data has been a project of its own.
+
+I'd also like to include other factors such as the approval rating of the incumbent President (and their party), polling averages, and social media sentiment, but I'm unsure if such data are available at the county level; if not, how I might interpolate them; and if county interpolation is not desirable, whether it makes sense to apply nationwide figures to every county.
+
+
+
+
+I've created a Tableau workbook to visualize certain statistics. It will be updated as more are added.
+
+
+
+
+I have been working with machine learning models. My basic methodology is as follows:
+1. Set two targets: Republican percentage and Democratic percentage. This helps to partially account for errors that only affect one party (as notably occurred in Utah in 2016).
+3. Predict each county for election, using the other elections as training.
+4. Gather statistics such as Absolute Error, Median Error, Z-Score and more for each party for each county.
+5. Take the two-party average (2PA) for each of these values for each county. For example, in a county where Democrats are overestimated by 1 point and Republicans are overestimated by 3, the 2PA Absolute Error will be 2. The 2PA averages will be regarded as the ultimate measures of performance.
+6. Aggregate these stats across county, state, year, and state/year combination.
+I am still experimenting with validation techniques such as GridSearchCV, K-Folds, and feature selection.
+
+
+Once I have maximally optimized a model, I will attempt to simulate the 2024 election using the full 2000-2020 dataset as training. From county results, statewide totals will be summed and electoral votes assigned accordingly.
+My primitive version of this 2024 model predicted a Democratic victory, the opposite of the real-life result.
+
+If I can add real 2024 results to my dataset, I will then move on to predicting 2028.
+
+
+
+
+PROBLEMATIC STATES AND COUNTIES
+
+Alaska - Alaska does not have counties in the traditional sense, but is instead broken into "organized" and "unorganized" boroughs. This would be fine except some data sources do not use these, but instead use "districts" with entirely different boundaries and names. Until or unless I can find a method to reconcile these differing statistical areas, I will have to exclude Alaska from the simulation.
+
+Virginia - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. Though data exist for both prior to their status changes, I have excluded them as I believe models would be confused by missing data. 
+
+Colorado - Broomfield County did not exist until 2001. The city of Broomfield was previously spread across four counties, and was granted county status in its own right for more efficient self-governance. Thus, it is not included in many datasets for 2000. I am considering interpolating values based on real ones, but this would also artifically inflate Colorado's statewide vote totals for 2000 as its votes were spread across the other counties. For now, I have excluded it.
+
+Hawaii - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine center. To this day it is inhabited only by the descendants of the initial patients, public access requires official permission, land acceess is only by mule trail, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
+
+Connecticut - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile old county names with new boundaries. This will become a larger problem when/if 2024 data is added.
+
+South Dakota - The former Shannon County changed its name to Oglala Lakota County in 2015. Entries with the old name have been updated to use the new one.
+
+
+
+OTHER QUIRKS
+You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
+
+
+
+
+
+
+
