@@ -61,6 +61,7 @@ TO DO LIST AND IDEAS:
 9. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
 10. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate)).
 11. NLP?
+12. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
 
 
 
