@@ -9,7 +9,7 @@ DATA SOURCES
 2. Education and unemployment data were obtained from the Economic Research Service, a sub-agency of the Department of Agriculture: https://www.ers.usda.gov/ (For education, estimates were only available for 2000, 2008-2012, and 2019-2023. I assigned 2008-12 values to 2010, and 2019-23 values to 2021, then interpolated estimates for years between.)
 3. Population data were obtained from the United States Census Bureau. 2000, 2010, and 2020 data were taken from official Census figures, and other years use Census Bureau estimates: https://www.census.gov/
 
-I intend to add more statistics such as income, life expectancy, and demographics. 
+I intend to add more statistics such as income, life expectancy, demographics, and English profiency (not a final list).
 
 Finding and cleaning data has been a project of its own.
 
