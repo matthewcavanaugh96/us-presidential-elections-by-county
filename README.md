@@ -2,6 +2,9 @@
 Analyzing United States Presidential election results at the county level from 2000 to 2020.
 
 
+Pardon the mess. I am still optimizing my scripts, developing new ideas, and working on a data storage structure. The main notebook will be split into several smaller ones at some stage in the future.
+
+
 Election results were obtained from Harvard Dataverse.
 https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
 
