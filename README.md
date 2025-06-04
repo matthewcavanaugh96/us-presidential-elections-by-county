@@ -29,12 +29,11 @@ I've created a Tableau workbook to visualize certain statistics. It will be upda
 I have been working with machine learning models. My basic methodology is as follows:
 1. Set two targets: Republican percentage and Democratic percentage. This helps to partially account for errors that only affect one party (as notably occurred in Utah in 2016).
 3. Predict each county for election, using the other elections as training.
-4. Gather statistics such as Absolute Error, Median Error, Z-Score and more.
-5. Take the two-party average (2PA) for each of these values for each county. For example, in a county where Democrats are overestimated by 1 point and Republicans are overestimated by 3, the 2PA Absolute Error will be 2.
+4. Gather statistics such as Absolute Error, Median Error, Z-Score and more for each party for each county.
+5. Take the two-party average (2PA) for each of these values for each county. For example, in a county where Democrats are overestimated by 1 point and Republicans are overestimated by 3, the 2PA Absolute Error will be 2. The 2PA averages will be regarded as the ultimate measures of performance.
 6. Aggregate these stats across county, state, year, and state/year combination.
 I am still experimenting with validation techniques such as GridSearchCV, K-Folds, and feature selection.
 
-I will compare compatible statistics across multiple models.
 
 Once I have maximally optimized a model, I will attempt to simulate the 2024 election using the full 2000-2020 dataset as training. From county results, statewide totals will be summed and electoral votes assigned accordingly.
 My primitive version of this 2024 model predicted a Democratic victory, the opposite of the real-life result.
