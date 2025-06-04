@@ -60,6 +60,7 @@ TO DO LIST AND IDEAS:
 8. Rename percentage columns to include the % symbol
 9. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
 10. In the Tableau workbook, I need to alter how I calculate the mean education rates by county. Currently I am taking a mean of county values, which is not fair as counties are not equally populated. Instead I need to do something like (SUM Population) / (SUM(Population by county * High school graduate)).
+11. NLP?
 
 
 
