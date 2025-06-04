@@ -48,36 +48,28 @@ If I can add real 2024 results to my dataset, I will then move on to predicting 
 
 STATES AND COUNTIES EXCLUDED, NO OBVIOUS FIX:
 
-    ALASKA - Alaska does not have counties in the traditional sense, but is instead broken into "organized" and "unorganized" boroughs. This would be fine except some data sources do not use these, but instead use "districts" with entirely different boundaries and names. Until or unless I can find a method to reconcile these differing statistical areas, I will have to exclude Alaska from the dataset.
-
-    VIRGINIA - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. Though data exist for both prior to their status changes, I have excluded them as I believe models would be confused by missing data. 
-
-    COLORADO - Broomfield County did not exist until 2001. The city of Broomfield was previously spread across four counties before being granted the status of Consolidated City/County for more efficient self-governance. Thus, it is missing from most 2000 data. I am considering interpolating values based on real ones, but this would also artifically inflate Colorado's statewide vote totals for 2000 as its votes were spread across the other counties, unless *their* 2000 values could be interpolated downward to estimate figures if Broomfield had never been a part of them. For now, I have excluded it.
-
-    HAWAII - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine settlement. To this day it is inhabited only by the descendants of the initial patients, land access is only by mule trail, public visitation requires official permission, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
-
-    NON COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes such as overseas and write-ins which are not assigned to any particular county. I wonder if I could assign these votes proportionally to counties by population, then assign votes to parties based on the county's figures.
+1. ALASKA - Alaska does not have counties in the traditional sense, but is instead broken into "organized" and "unorganized" boroughs. This would be fine except some data sources do not use these, but instead use "districts" with entirely different boundaries and names. Until or unless I can find a method to reconcile these differing statistical areas, I will have to exclude Alaska from the dataset.
+2. VIRGINIA - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. Though data exist for both prior to their status changes, I have excluded them as I believe models would be confused by missing data.
+3. COLORADO - Broomfield County did not exist until 2001. The city of Broomfield was previously spread across four counties before being granted the status of Consolidated City/County for more efficient self-governance. Thus, it is missing from most 2000 data. I am considering interpolating values based on real ones, but this would also artifically inflate Colorado's statewide vote totals for 2000 as its votes were spread across the other counties, unless *their* 2000 values could be interpolated downward to estimate figures if Broomfield had never been a part of them. For now, I have excluded it.
+4. HAWAII - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine settlement. To this day it is inhabited only by the descendants of the initial patients, land access is only by mule trail, public visitation requires official permission, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
+5. NON-COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes such as overseas and write-ins which are not assigned to any particular county. I wonder if I could assign these votes proportionally to counties by population, then assign votes to parties based on the county's figures.
 
 
 NOT A PROBLEM FOR NOW, BUT COULD CAUSE COMPLICATIONS:
-
-    CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
-
-    SOUTH DAKOTA - Oglala Lakota County was known as Shannon County until 2015. Entries with the old name have been updated to use the new one. For the purposes of this project, this will not cause any problems, but complications could arise if my compiled dataset is compared to older ones.
+1. CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
+2. SOUTH DAKOTA - Oglala Lakota County was known as Shannon County until 2015. Entries with the old name have been updated to use the new one. For the purposes of this project, this will not cause any problems, but complications could arise if my compiled dataset is compared to older ones.
 
 ACCIDENTALLY EXCLUDED, HOPE TO FIX:
-
-    MISSOURI - Kansas City was listed in the county column of the Harvard election dataset despite not being a county equivalent, so I dropped it. However, this has caused Jackson County, in which it is contained, to have inaccurate results, showing GOP victories when in reality it has not voted Republican since 1972. The two may have been split for some reason, as a result of which the Jackson County entry would only reflect its non-Kansas City portion. If this is the case, recombining their totals should be easy. If not, there may be a deeper problem with the data. It is strange, as this doesn't seem to have been done for any other non-county equivalent municipality.
-
-    SPELLING - St. Mary's County, Maryland, and the District of Columbia ended up absent from the final dataset. Both had spelling inconsistencies which arose repeatedly during cleaning, and which I thought I had resolved, but I will have to check again.
-
-
+1. KANSAS CITY/JACKSON COUNTY - Kansas City, Missouri was listed in the county column of the Harvard election dataset despite not being a county equivalent, so I dropped it. However, this has caused Jackson County, in which it is contained, to have inaccurate results, showing GOP victories when in reality it has not voted Republican since 1972. The two may have been split for some reason, as a result of which the Jackson County entry would only reflect its non-Kansas City portion. If this is the case, recombining their totals should be easy. If not, there may be a deeper problem with the data. It is strange, as this doesn't seem to have been done for any other non-county equivalent municipality.
+2. SPELLING ERRORS - St. Mary's County, Maryland, and the District of Columbia ended up absent from the final dataset. Both had spelling inconsistencies which arose repeatedly during cleaning, and which I thought I had resolved, but I will have to check again.
 
 OTHER QUIRKS:
 You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
 
-IDEAS:
+IDEAS AND TO DO LIST:
+Need more visualizations.
 After model results are compiled, print the results with each year excluded.
+Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
 
 
 
