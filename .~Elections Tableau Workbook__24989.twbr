@@ -317,6 +317,16 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='High school graduate (Yearly Mean)' datatype='real' name='[Calculation_1758444565296209922]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_AVG(SUM([High school graduate]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='High school graduate (± Yearly Mean)' datatype='real' name='[Calculation_1758444565296349187]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([High school graduate]) - WINDOW_AVG(SUM([High school graduate]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column datatype='integer' name='[FIPS Code]' role='dimension' type='ordinal' />
       <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
@@ -662,7 +672,7 @@
     <mapsource name='Tableau' />
   </mapsources>
   <worksheets>
-    <worksheet name='High school'>
+    <worksheet name='HSE Outliers'>
       <table>
         <view>
           <datasources>
@@ -686,7 +696,7 @@
             <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
-            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[yr:Year:ok]' member='2016' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
@@ -695,8 +705,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8327766.8340920927' min='-8990320.4370827749' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='4983439.8772050645' min='4556219.5039143413' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-5089324.1604862502' min='-13975074.194094798' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='8429151.1493296623' min='2304627.3508108654' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' max='99.549999999999997' min='48.149999999999999' palette='red_blue_diverging_10_0' type='interpolated' />
@@ -745,6 +755,168 @@
       </table>
       <simple-id uuid='{78700E5D-A74B-479C-BBAA-057CEA8CF104}' />
     </worksheet>
+    <worksheet name='HSE Overall Mean'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column datatype='real' name='[At least some college]' role='measure' type='quantitative' />
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[High school graduate]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Less than high school]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[At least some college]' derivation='Sum' name='[sum:At least some college:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[High school graduate]' derivation='Sum' name='[sum:High school graduate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Less than high school]' derivation='Sum' name='[sum:Less than high school:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7167851.3547706706' min='-13366925.667799359' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='7015720.9356455011' min='2742994.6024343884' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='83.33' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' max='99.549999999999997' min='48.149999999999999' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:At least some college:qk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Less than high school:qk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{C784E176-0979-42C6-8DED-9001E3A3473F}' />
+    </worksheet>
+    <worksheet name='HSE Yearly Mean'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned County Dataset' name='federated.1k6cbm30fnzfnm1d867oy16zob9k' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1k6cbm30fnzfnm1d867oy16zob9k'>
+            <column caption='High school graduate (± Yearly Mean)' datatype='real' name='[Calculation_1758444565296349187]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([High school graduate]) - WINDOW_AVG(SUM([High school graduate]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='real' name='[High school graduate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='date' datatype-customized='true' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[High school graduate]' derivation='Sum' name='[sum:High school graduate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1758444565296349187]' derivation='User' name='[usr:Calculation_1758444565296349187:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[County]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
+            <groupfilter function='member' level='[yr:Year:ok]' member='2000' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-9381674.0393049531' min='-15664340.85593251' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='7185251.6382964477' min='2713872.2826322056' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]' />
+              <lod column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]' />
+              <tooltip column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' />
+              <geometry column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:County:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[none:State:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>High school graduate (± mean):&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]</rows>
+        <cols>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{D1D923C4-D867-4D17-A90F-A18A995126CF}' />
+    </worksheet>
     <worksheet name='Margin'>
       <table>
         <view>
@@ -765,7 +937,7 @@
             <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
-            <groupfilter function='member' level='[yr:Year:ok]' member='2016' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
@@ -774,8 +946,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7493863.0609788317' min='-8776945.0798603259' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5689375.8859712165' min='4862033.3485601395' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-9215680.2531168051' min='-14051360.413396744' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='6598014.1861539632' min='3479925.2136329003' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
@@ -837,8 +1009,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7104744.9399854001' min='-12380724.865141079' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='6558762.5778679028' min='3156764.4558667904' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8812982.6779266782' min='-11383776.8157079' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5606100.3231059192' min='3948429.719189601' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' center='40.0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Turnout:qk]' max='232.84' min='8.0999999999999996' palette='orange_blue_diverging_10_0' type='interpolated' />
@@ -874,7 +1046,7 @@
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Margin'>
+    <window class='worksheet' name='Margin'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -903,34 +1075,6 @@
       </cards>
       <simple-id uuid='{94581460-3A9C-4755-8302-116834BE5373}' />
     </window>
-    <window class='worksheet' name='High school'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
-            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{6C893F87-CEF1-4C2B-AA66-3AFF73BBD456}' />
-    </window>
     <window class='worksheet' name='Turnout'>
       <cards>
         <edge name='left'>
@@ -958,6 +1102,91 @@
         </edge>
       </cards>
       <simple-id uuid='{A2DE875A-8FDA-496E-904A-2508E50179A6}' />
+    </window>
+    <window class='worksheet' name='HSE Overall Mean'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2F43F48C-181D-4BF9-BCF1-21A8ACE72D19}' />
+    </window>
+    <window class='worksheet' maximized='true' name='HSE Yearly Mean'>
+      <cards>
+        <edge name='left'>
+          <strip size='187'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[usr:Calculation_1758444565296349187:qk:2]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1223F8F1-537C-4401-8D12-FE1C5B55C0AA}' />
+    </window>
+    <window class='worksheet' name='HSE Outliers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6C893F87-CEF1-4C2B-AA66-3AFF73BBD456}' />
     </window>
   </windows>
 </workbook>

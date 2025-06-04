@@ -686,7 +686,7 @@
             <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
-            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[yr:Year:ok]' member='2016' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
@@ -695,8 +695,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8327766.8340920927' min='-8990320.4370827749' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='4983439.8772050645' min='4556219.5039143413' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8842736.0906351488' min='-9653615.2306235209' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5243034.6131396694' min='4720172.6328926701' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:High school graduate:qk]' max='99.549999999999997' min='48.149999999999999' palette='red_blue_diverging_10_0' type='interpolated' />
@@ -765,7 +765,7 @@
             <column-instance column='[Year]' derivation='Year' name='[yr:Year:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]'>
-            <groupfilter function='member' level='[yr:Year:ok]' member='2016' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[yr:Year:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.1k6cbm30fnzfnm1d867oy16zob9k].[yr:Year:ok]</column>
@@ -774,8 +774,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7493863.0609788317' min='-8776945.0798603259' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5689375.8859712165' min='4862033.3485601395' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-9215680.2531168051' min='-14051360.413396744' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='6598014.1861539632' min='3479925.2136329003' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:D-R margin:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
@@ -837,8 +837,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-7104744.9399854001' min='-12380724.865141079' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='6558762.5778679028' min='3156764.4558667904' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Longitude (generated)]' field-type='quantitative' max='-8812982.6779266782' min='-11383776.8157079' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[Latitude (generated)]' field-type='quantitative' max='5606100.3231059192' min='3948429.719189601' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' center='40.0' field='[federated.1k6cbm30fnzfnm1d867oy16zob9k].[sum:Turnout:qk]' max='232.84' min='8.0999999999999996' palette='orange_blue_diverging_10_0' type='interpolated' />
@@ -874,7 +874,7 @@
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Margin'>
+    <window class='worksheet' name='Margin'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -903,7 +903,7 @@
       </cards>
       <simple-id uuid='{94581460-3A9C-4755-8302-116834BE5373}' />
     </window>
-    <window class='worksheet' name='High school'>
+    <window class='worksheet' maximized='true' name='High school'>
       <cards>
         <edge name='left'>
           <strip size='160'>
