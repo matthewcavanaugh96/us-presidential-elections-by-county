@@ -36,7 +36,7 @@ STATES AND COUNTIES EXCLUDED:
 3. HAWAII - Kalawao County, though named as such, has no administrative functions of its own. It was established as a leprosy quarantine settlement. To this day it is inhabited only by the descendants of the initial patients, land access is only by mule trail, public visitation requires official permission, and as of 2020 its population was just 82. It was entirely absent from some of the datasets, so I have excluded it.
 
 
-BE WARY:
+DATA CLEANED, BUT POSSIBLE COMPLICATIONS:
 1. CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
 2. SOUTH DAKOTA - Oglala Lakota County was known as Shannon County until 2015. Entries with the old name have been updated to use the new one. For the purposes of this project, this will not cause any problems, but complications could arise if my compiled dataset is compared to older ones.
 3. KANSAS CITY/JACKSON COUNTY - For some reason, Kansas City, Missouri is listed separately despite not having county status. After 2000, its numbers are split off from Jackson County, in which it is contained. Jackson County's post-2000, statistics, in turn, only reflect parts of the county outside of Kansas City. I manually recombined the raw numbers and recalculated percentages, so they are now treated as one entity.
