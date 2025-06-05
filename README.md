@@ -3,6 +3,8 @@ Analyzing United States Presidential election results at the county level from 2
 
 Pardon the mess. I am still optimizing my scripts, developing new ideas, and working on a data storage structure.
 
+The repository is also getting cluttered up with Tableau autosaves because Tableau keeps crashing. I hope to find a fix, or at least put it in a separate folder.
+
 DATA SOURCES
 
 1. Election results were obtained from Harvard Dataverse: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
