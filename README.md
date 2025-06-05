@@ -5,6 +5,8 @@ Pardon the mess. I am still optimizing my scripts, developing new ideas, and wor
 
 The repository is also getting cluttered up with Tableau autosaves because Tableau keeps crashing. I hope to find a fix, or at least put it in a separate folder.
 
+Parts 1 and 2 show my data cleaning and merging. If you want to go straight to the analysis and modeling, you can start at Part 3.
+
 DATA SOURCES
 
 1. Election results were obtained from Harvard Dataverse: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
