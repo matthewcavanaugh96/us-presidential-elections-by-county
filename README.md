@@ -69,6 +69,7 @@ IDEAS AND TO DO LIST
 8. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate))
 9. NLP?
 10. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
+11. IDEA - Adjust error by state relative to its margin. If a party is predicted to win a state by 30 points but only win it by 20, that's less significant than a 5-point error that changes the outcome.
 
 
 
