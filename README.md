@@ -50,18 +50,19 @@ OTHER QUIRKS:
 You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
 
 TO DO LIST AND IDEAS:
-1. Need more visualizations.
-2. Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
-3. IDEA - After model results are compiled, print the results with each year excluded
-4. IDEA - Interpolate data between the election years and simulate them as if an election took place.
-5. IDEA - SMOTER (regression equivalent of SMOTE, in which synthetic data points are generated to strengthen the relationship between features)
-6. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
-7. Color code columns for parties. Tried a primitive version of this, didn't work. Background color, or just text?
-8. Rename percentage columns to include the % symbol
-9. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
-10. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate)).
-11. NLP?
-12. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
+1. Certain states allow electoral fusion, in which a candidate can run on multiple ballot lines and receive combined credit for all. For instance, in New York, Democratic nominees are frequently nominated by the Working Families party, and voters may vote for either one. I am unsure of whether I should re-assign these votes to the main parties or leave them.
+2. Need more visualizations.
+3. Restructure data. Rename workbooks and data source files for clarity. Split main notebook into sections, named numerically for sorting.
+4. IDEA - After model results are compiled, print the results with each year excluded
+5. IDEA - Interpolate data between the election years and simulate them as if an election took place.
+6. IDEA - SMOTER (regression equivalent of SMOTE, in which synthetic data points are generated to strengthen the relationship between features)
+7. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
+8. Color code columns for parties. Tried a primitive version of this, didn't work. Background color, or just text?
+9. Rename percentage columns to include the % symbol
+10. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
+11. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate)).
+12. NLP?
+13. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
 
 
 
