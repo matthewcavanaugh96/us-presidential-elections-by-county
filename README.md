@@ -74,6 +74,9 @@ IDEAS AND TO DO LIST
 12. IDEA - Try classification as well. I've built basic binaries by comparing predicted with actual values, but I am curious how a Random Forest Classifier could handle this data. Would it be worth trying to remove each party's vote totals and percentages, and train only on the winner from the other years?
 13. IDEA - Adjust errors for total votes? So that larger counties would be punished more?
 14. Distribution curve visualization of "correct" predictions - some of which had large errors in vote share despite choosing the correct party.
+15. Add more models - including some which do not support multi output regression - run separately for each target, then take 2PAs as those are our focus anyway.
+16. Adjusted volatility score should factor in third-party performance - both the largest and the average across the years.
+17. In 2024 prediction, add averages among the models as features for training.
 
 
 
