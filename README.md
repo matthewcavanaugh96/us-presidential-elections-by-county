@@ -72,7 +72,7 @@ IDEAS AND TO DO LIST
 10. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
 11. IDEA - Adjust error by state relative to its margin. If a party is predicted to win a state by 30 points but only win it by 20, that's less significant than a 5-point error that changes the outcome.
 12. IDEA - Try classification as well. I've built basic binaries by comparing predicted with actual values, but I am curious how a Random Forest Classifier could handle this data. Would it be worth trying to remove each party's vote totals and percentages, and train only on the winner from the other years?
-
+13. IDEA - Adjust errors for total votes? So that larger counties would be punished more?
 
 
 
