@@ -50,7 +50,8 @@ DATA CLEANED, BUT POSSIBLE COMPLICATIONS:
 OTHER DATA COMPLICATIONS:
 1. Certain states allow electoral fusion, in which a candidate can run on multiple ballot lines and receive combined credit for all. For instance, in New York, Democratic nominees are frequently nominated by the Working Families party, and voters may vote for either one. I am unsure of whether I should re-assign these votes to the main parties or leave them. These alternative ballot lines may be valuable in signaling protest votes, but are difficult to simulate as the minor parties don't participate in every election.
 2. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
-3. Some counties are showing suspiciously high third-party vote shares in certain years. Need to investigate.
+3. Maine and Nebraska allocate electoral votes differently, giving two statewide and one for each of its Congressional districts, which do not precisely correspond with county lines. I will have to devise a method to reconcile these boundaries.
+4. Some counties are showing suspiciously high third-party vote shares in certain years. Need to investigate.
 
 
 
@@ -69,7 +70,10 @@ IDEAS AND TO DO LIST
 8. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate))
 9. NLP?
 10. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
-
+11. IDEA - Adjust error by state relative to its margin. If a party is predicted to win a state by 30 points but only win it by 20, that's less significant than a 5-point error that changes the outcome.
+12. IDEA - Try classification as well. I've built basic binaries by comparing predicted with actual values, but I am curious how a Random Forest Classifier could handle this data. Would it be worth trying to remove each party's vote totals and percentages, and train only on the winner from the other years?
+13. IDEA - Adjust errors for total votes? So that larger counties would be punished more?
+14. Distribution curve visualization of "correct" - some of which had large errors in vote share despite choosing the correct party.
 
 
 
