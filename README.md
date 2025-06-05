@@ -1,7 +1,7 @@
 # us-presidential-elections-by-county
 Analyzing United States Presidential election results at the county level from 2000 to 2020.
 
-Pardon the mess. I am still optimizing my scripts, developing new ideas, and working on a data storage structure. The main notebook will be split into several smaller ones at some stage in the future.
+Pardon the mess. I am still optimizing my scripts, developing new ideas, and working on a data storage structure.
 
 DATA SOURCES
 
@@ -37,11 +37,11 @@ STATES AND COUNTIES EXCLUDED:
 
 
 DATA CLEANED, BUT POSSIBLE COMPLICATIONS:
-1. CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity is not an issue. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
-2. SOUTH DAKOTA - Oglala Lakota County was known as Shannon County until 2015. Entries with the old name have been updated to use the new one. For the purposes of this project, this will not cause any problems, but complications could arise if my compiled dataset is compared to older ones.
-3. KANSAS CITY/JACKSON COUNTY - For some reason, Kansas City, Missouri is listed separately despite not having county status. After 2000, its numbers are split off from Jackson County, in which it is contained. Jackson County's post-2000, statistics, in turn, only reflect parts of the county outside of Kansas City. I manually recombined the raw numbers and recalculated percentages, so they are now treated as one entity.
-4. VIRGINIA - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. Though data exist for both prior to their status changes, I have excluded them as I believe models would be confused by missing data.
-5. NON-COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes (overseas, write-ins etc) which are not assigned to any particular county. I allocated these votes proportionally to each county based on the percentage of statewide votes it cast, then assigned votes proportionally within the counties by each party's percentage of the vote.
+1. CONNECTICUT - In Connecticut, counties ceased most administrative functions in 1960, but remained for statistical purposes until being replaced by new "planning areas" with different boundaries in 2022. As all elections in the dataset took place prior to this change, data integrity won't be an issue for analysis. However, visualization tools such as Tableau may not know how to reconcile the old counties with the new planning areas. This will become a larger problem when/if I add 2024 data.
+2. SOUTH DAKOTA - Oglala Lakota County was known as Shannon County until 2015. Entries with the old name and FIPS Code have been updated to use the new ones. For the purposes of this project, this will not cause any problems, but complications could arise if my compiled dataset is compared to older ones.
+3. KANSAS CITY/JACKSON COUNTY - For some reason, Kansas City, Missouri is listed separately despite not having county-equivalent status. After 2000, its numbers are split off from Jackson County, in which it is contained. Jackson County's post-2000, statistics, in turn, only reflect parts of the county outside of Kansas City. This doesn't seem to have been done for any other non-county entity. I manually recombined the raw numbers and recalculated percentages, so they now reflect the entirety of Jackson County.
+4. VIRGINIA - In Virginia, dozens of "independent cities" exist which are treated as county equivalents, and many of these share names with counties despite being separate entities. FIPS Codes have ensured data integrity, and independent cities have been re-labeled as such for clarity. Two former independent cities have given up such status since the beginning of this dataset - Clifton Forge, which merged into Allegheny County in 2001; and Bedford City, which merged into Bedford County in 2013. I have excluded them for now as I believe models would be confused by missing data.
+7. NON-COUNTY VOTES - From 2012 onward, Connecticut, Maine, and Rhode Island have tabulated special types of votes (overseas, write-ins etc) which are not assigned to any particular county. I allocated these votes proportionally to each county based on the percentage of statewide votes it cast, then assigned votes proportionally within the counties by each party's percentage of the vote.
 
 
 
