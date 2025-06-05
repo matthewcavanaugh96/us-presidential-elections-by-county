@@ -15,20 +15,20 @@ I intend to add more statistics such as income, life expectancy, demographics, a
 
 Finding and cleaning data has been a project of its own.
 
-I'd also like to include other factors such as the approval rating of the incumbent President (and their party), polling averages, and social media sentiment, but I'm unsure if such data are available at the county level; if not, how I might interpolate them; and if county interpolation is not desirable, whether it makes sense to apply nationwide figures to every county.
+I'd also like to include other factors such as the approval rating of the incumbent President (and their party), polling averages, and social media sentiment, but I'm unsure if such data are available at the county level; if not, how I might interpolate them; and if county interpolation is not desirable, whether it makes sense to simply apply nationwide or statewide figures to every county.
 
 I've created a Tableau workbook to visualize certain statistics. It will be updated as more are added.
 
 I have been working with machine learning models. My basic methodology is as follows:
-1. Set two targets: Republican percentage and Democratic percentage. This helps to partially account for errors that only affect one party (as notably occurred in Utah in 2016).
-3. Predict each county for election, using the other elections as training.
+1. Model tuning, with techniques such as GridSearchCV, K-Folds, and feature selection. Tried a GridSearch already, couldn't get it to run in 30 minutes. Will try again soon.
+2. Set two targets: Republican Percentage and Democratic Percentage. This helps to smooth out vote swings that only affect one party (as notably occurred in Utah in 2016).
+3. One by one, predict vote shares for both parties in each election, using the other elections as training.
 4. Gather statistics such as Absolute Error, Median Error, Z-Score and more for each party for each county.
 5. Take the two-party average (2PA) for each of these values for each county. For example, in a county where Democrats are overestimated by 1 point and Republicans are overestimated by 3, the 2PA Absolute Error will be 2. The 2PA averages will be regarded as the ultimate measures of performance.
-6. Aggregate these stats across county, state, year, and state/year combination.
-I am still experimenting with validation techniques such as GridSearchCV, K-Folds, and feature selection.
+7. Aggregate these stats across county, state, year, and state/year combination. In doing so, we also will assign votes to the parties in each county by multiplying actual total votes by the party's predicted percentage. This will allow us to aggregate statewide vote totals and assign electoral votes accordingly.
 
-Once I have maximally optimized a model, I will attempt to simulate the 2024 election using the full 2000-2020 dataset as training. From county results, statewide totals will be summed and electoral votes assigned accordingly.
-My primitive version of this 2024 model predicted a Democratic victory, the opposite of the real-life result.
+Once I have maximally optimized a model, I will attempt to simulate the 2024 election using the full 2000-2020 dataset as training.
+My primitive version of a 2024 model predicted a Democratic victory, the opposite of the real-life result.
 
 If I can add real 2024 results to my dataset, I will then move on to predicting 2028.
 
@@ -48,10 +48,10 @@ DATA CLEANED, BUT POSSIBLE COMPLICATIONS:
 
 
 OTHER DATA COMPLICATIONS:
-1. Certain states allow electoral fusion, in which a candidate can run on multiple ballot lines and receive combined credit for all. For instance, in New York, Democratic nominees are frequently nominated by the Working Families party, and voters may vote for either one. I am unsure of whether I should re-assign these votes to the main parties or leave them. These alternative ballot lines may be valuable in signaling protest votes, but are difficult to simulate as the minor parties don't participate in every election.
-2. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
-3. Maine and Nebraska allocate electoral votes differently, giving two statewide and one for each of its Congressional districts, which do not precisely correspond with county lines. I will have to devise a method to reconcile these boundaries.
-4. Some counties are showing suspiciously high third-party vote shares in certain years. Need to investigate.
+1. Certain states allow electoral fusion, in which a candidate can run on multiple ballot lines and receive combined credit for all. For instance, in New York in 2020, voters could vote for Joe Biden either as the Democratic nominee *or* as the Working Families nominee. These alternative ballot lines may be valuable in signaling protest votes, but are difficult to simulate as the minor parties don't participate in every election. However, merely reassigning such votes to the main party would present a data integrity challenge. I may have to alter my data structure to account for this.
+2. How to handle the Green and Libertarian Parties? The election dataset provides separate entries for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. There are other minor parties which appear on ballots even less commonly - should each of them have their own columns as well? For now, they have been rolled into a generic "Other" category for vote totals and percentages.
+3. Maine and Nebraska allocate electoral votes differently, giving two statewide and one for each of its Congressional districts, which do not precisely correspond with county lines. I will have to devise a method to reconcile these boundaries. Until then, I am using the winner-take-all system of other states.
+4. Some counties are showing suspiciously high third-party vote shares in certain years. Need to investigate and ensure no errors are occurring during cleaning.
 
 
 
@@ -69,11 +69,11 @@ IDEAS AND TO DO LIST
 7. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
 8. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate))
 9. NLP?
-10. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
-11. IDEA - Adjust error by state relative to its margin. If a party is predicted to win a state by 30 points but only win it by 20, that's less significant than a 5-point error that changes the outcome.
+10. IDEA - Add to the main dataframe a new column showing for each value the change from the previous year.
+11. IDEA - Adjust error by state relative to its margin. If a party is predicted to win a state by 30 points but only win it by 20, that may be less significant than a 5-point error that changes the outcome of the state.
 12. IDEA - Try classification as well. I've built basic binaries by comparing predicted with actual values, but I am curious how a Random Forest Classifier could handle this data. Would it be worth trying to remove each party's vote totals and percentages, and train only on the winner from the other years?
 13. IDEA - Adjust errors for total votes? So that larger counties would be punished more?
-14. Distribution curve visualization of "correct" - some of which had large errors in vote share despite choosing the correct party.
+14. Distribution curve visualization of "correct" predictions - some of which had large errors in vote share despite choosing the correct party.
 
 
 
