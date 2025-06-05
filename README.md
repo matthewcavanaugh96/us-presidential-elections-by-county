@@ -56,16 +56,16 @@ You may notice that Loving County, TX, frequently has more votes than residents,
 
 
 IDEAS AND TO DO LIST
-2. Need more visualizations.
-3. IDEA - After model results are compiled, print the results with each year excluded
-4. IDEA - Interpolate data between the election years and simulate them as if an election took place.
-5. IDEA - SMOTER (regression equivalent of SMOTE, in which synthetic data points are generated to strengthen the relationship between features)
-6. Color code columns for parties. Tried a primitive version of this, didn't work. Background color, or just text?
-7. Rename percentage columns to include the % symbol
-8. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
-9. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate)).
-10. NLP?
-11. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
+1. Need more visualizations
+2. IDEA - After model results are compiled, print the results with each year excluded
+3. IDEA - Interpolate data between the election years and simulate them as if an election took place.
+4. IDEA - SMOTER (regression equivalent of SMOTE, in which synthetic data points are generated to strengthen the relationship between features)
+5. Color code columns for parties. Tried a primitive version of this, didn't work. Background color, or just text?
+6. Rename percentage columns to include the % symbol
+7. Potentially rename the "Bachelor's degree or higher" to remove the apostrophe, as it is causing quote escape problems
+8. In the Tableau workbook, I may need to alter how I calculate the mean values. Currently I am taking a mean of county values, which may not be fair as counties are not equally populated. Instead, I may need to do something like (SUM Population) / (SUM(Population by county * High school graduate))
+9. NLP?
+10. IDEA - Add to the main dataframe a new column showing for each value, showing the change from the previous year.
 
 
 
