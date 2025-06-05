@@ -48,6 +48,7 @@ DATA CLEANED, BUT POSSIBLE COMPLICATIONS:
 OTHER DATA COMPLICATIONS:
 1. Certain states allow electoral fusion, in which a candidate can run on multiple ballot lines and receive combined credit for all. For instance, in New York, Democratic nominees are frequently nominated by the Working Families party, and voters may vote for either one. I am unsure of whether I should re-assign these votes to the main parties or leave them. These alternative ballot lines may be valuable in signaling protest votes, but are difficult to simulate as the minor parties don't participate in every election.
 2. How to handle the Green and Libertarian Parties? The election dataset provides separate columns for these parties, but they have not been on the ballot in every state in every election since 2000. On one hand, the absence of a minor party could cause the model to correctly assign higher vote shares to the major ones, but I also fear the model could make incorrect political inferences about why votes dropped to 0. For now, they have been rolled into a generic "Other" category for vote totals and percentages.
+3. Some counties are showing suspiciously high third-party vote shares in certain years. Need to investigate.
 
 
 
