@@ -79,6 +79,7 @@ IDEAS AND TO DO LIST
 15. Add more models - including some which do not support multi output regression - run separately for each target, then take 2PAs as those are our focus anyway.
 16. Adjusted volatility score should factor in third-party performance - both the largest and the average across the years.
 17. In 2024 prediction, add averages among the models as features for training.
+18. CONFUSION MATRIX - A confusion matrix isn't strictly possible with regression, but can I sort of reverse engineer one by comparison estimates with actuals? True Democrat, False Democrat, False Republican, True Republican? Would that just be redundant?
 
 
 
