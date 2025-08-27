@@ -58,7 +58,7 @@ OTHER DATA COMPLICATIONS:
 
 
 OTHER QUIRKS:
-You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and is not a data problem.
+You may notice that Loving County, TX, frequently has more votes than residents, causing turnout above 100%. This is a well-documented phenomenon which has resulted in lawsuits and nullification of local elections, and is not a data problem.
 
 
 IDEAS AND TO DO LIST
